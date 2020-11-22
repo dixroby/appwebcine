@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CineLand</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+    <header>
+
+        <img src="img/logo.png" alt="Logo" class="logo">
+
+        <nav>
+            <ul>
+                <li style="color:white">
+                    Dolar hoy:
+                    <span id="dolarHoy"></span>
+                </li>
+                <li style="color:white">
+                    Euro hoy:
+                    <span id="euroHoy"></span>
+                </li>
+                <li style="color:white">
+                    UTM hoy:
+                    <span id="utmHoy"></span>
+                </li>
+                <li style="color:white">
+                    UF hoy:
+                    <span id="ufHoy"></span>
+                </li>
+                <li>
+                    <a href="https://www.google.cl">Home</a>
+                </li>
+                <li>
+                    <a href="contacto.html">Contacto</a>
+                </li>
+                <li>
+                    <a href="https://www.google.cl">Home</a>
+                </li>
+                <li>
+                    <a href="https://facebook.com">Contacto</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div id="principal">
+        <br>
+        <div class="contenedor_formulario">
+            <div>
+                <form action="" id="formularioPelicula">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                    <br>
+                    <label for="genero">Genero</label>
+                    <select name="genero" id="genero">
+                        <option value="">Seleccionar</option>
+                        <option value="terror">Terror</option>
+                        <option value="fantasia">Fantasia</option>
+                    </select>
+                    <option value="duracion">Duracion</option>
+                    <input type="number" name="duracion" id="duracion">
+                    <br>
+                    <label for="esEstreno" style="display:inline">¿Es estreno?</label>
+                    <input type="checkbox" name="esEstreno" id="esEstreno">
+                    <br>
+                    <label for="sinopsis">Sinopsis</label>
+                    <textarea name="sinopsis" id="sinopsis" cols="30" rows="10"></textarea>
+                    <br>
+                    <fieldset class="en_linea">
+                        <legend>Clasificacion</legend>
+                        <label for="everyone" class="en_linea">E</label>
+                        <input type="radio" name="clasificacion" id="everyone" checked value="e">
+                        <label class="en_linea" for="radio">T</label>
+                        <input type="radio" name="clasificacion" id="teen" value="t">
+                        <label class="en_linea" for="mature">Mature</label>
+                        <input type="radio" name="clasificacion" id="mature" value="m">
+                    </fieldset>
+                    <br>
+                    <input type="reset" value="Limpiar" class="btn">
+                    <input type="button" value="Guardar" class="btn" id="btnEnviar">
+                </form>
+
+                <table id="tablaPeliculas">
+                        
+                </table>
+
+            </div>
+            <div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <footer class="hide_on_mobile">
+        <div>
+            <img src="img/logo.png" alt="logo" class="logo_footer">
+        </div>
+        <div>
+            <h4>Programación</h4>
+            <hr>
+            <ul>
+                <li>Cartelera</li>
+                <li>proximamente</li>
+                <li>Venta anticipada</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Programación</h4>
+            <hr>
+            <ul>
+                <li>Cartelera</li>
+                <li>proximamente</li>
+                <li>Venta anticipada</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Programación</h4>
+            <hr>
+            <ul>
+                <li>Cartelera</li>
+                <li>proximamente</li>
+                <li>Venta anticipada</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!--footer mobile-->
+    <footer class="hide_on_desktop">
+        <img src="img/logo.png" alt="Logo" class="logo_footer_mobile">
+    </footer>
+
+
+    <!--<ol>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+    </ol>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>Rodrigo</td>
+            <td>Pino</td>
+            <td>99</td>
+        </tr>
+    </table>
+
+    <img src="img/gatito.jpg" alt="gatito" width="250px">
+-->
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="js/formulario_pelicula_jquery.js"></script>
+   
+</body>
+
+</html>

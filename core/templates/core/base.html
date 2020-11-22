@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CineLand</title>
+    {% load static %}
+
+    {% block css %}
+    {% endblock %}
+    
+    <link rel="stylesheet" href="{% static 'core/css/estilos.css'%}">
+</head>
+<body>
+    <header>
+      
+        <img src="{% static 'core/img/logo.png'%} " alt="Logo" class="logo">
+
+        <nav>
+                <ul>
+                        <li>
+                            <a href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'galeria' %}">Gleria</a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.cl">Home</a>
+                        </li>
+                        <li>
+                            <a href="https://facebook.com">Contacto</a>
+                        </li>
+                </ul>   
+        </nav>
+        
+    </header>
+
+    <div id="principal">
+        <br>
+
+            {% block contenido %}
+
+            {% endblock %}
+
+        <br>
+    </div>
+
+    <footer class="hide_on_mobile">
+        <div>
+            <img src="{% static 'core/img/logo.png'%}  " alt="logo" class="logo_footer">
+        </div>
+        <div>
+            <h4>Programación</h4>
+            <hr>
+            <ul>
+                <li>Cartelera</li>
+                <li>proximamente</li>
+                <li>Venta anticipada</li>
+            </ul>
+        </div>
+        <div>
+                <h4>Programación</h4>
+                <hr>
+                <ul>
+                    <li>Cartelera</li>
+                    <li>proximamente</li>
+                    <li>Venta anticipada</li>
+                </ul>
+        </div>
+        <div>
+                <h4>Programación</h4>
+                <hr>
+                <ul>
+                    <li>Cartelera</li>
+                    <li>proximamente</li>
+                    <li>Venta anticipada</li>
+                </ul>
+        </div>
+    </footer>
+
+    <!--footer mobile-->
+    <footer class="hide_on_desktop">
+        <img src="{% static 'core/img/logo.png'%} " alt="Logo" class="logo_footer_mobile">
+    </footer>
+
+    {% block js %}
+    {% endblock %}
+    
+
+    <!--<ol>
+        <li>elemento 1</li>
+        <li>elemento 2</li>
+        <li>elemento 3</li>
+    </ol>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Edad</th>
+        </tr>
+        <tr>
+            <td>Rodrigo</td>
+            <td>Pino</td>
+            <td>99</td>
+        </tr>
+    </table>
+
+    <img src="img/gatito.jpg" alt="gatito" width="250px">
+-->
+    <!--realizamos la carga del script al final
+    para asegurarnos que la página esta cargada-->
+    <script src="{% static 'core/js/basico.js'%} "></script>
+</body>
+</html>
