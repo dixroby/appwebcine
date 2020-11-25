@@ -27,6 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#cONFIG
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
 
 # Application definition
 
@@ -119,3 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# URL mediante el cual accederana las imagenes que ya esten subidads
+MEDIA_URL = "/media/"
+
+#ruta en donde quedaran almacenados
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

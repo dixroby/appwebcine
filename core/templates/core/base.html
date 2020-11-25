@@ -20,17 +20,32 @@
         <nav>
                 <ul>
                         <li>
-                            <a href="{% url 'home' %}">Home</a>
+                            <a href="{% url 'pelicula:home' %}">Home</a>
                         </li>
                         <li>
-                            <a href="{% url 'galeria' %}">Gleria</a>
+                            <a href="{% url 'pelicula:galeria' %}">Gleria</a>
                         </li>
                         <li>
-                            <a href="{% url 'nueva_pelicula' %}">Nueva pelicula</a>
+                            <a href="{% url 'pelicula:nueva_pelicula' %}">Nueva pelicula</a>
                         </li>
                         <li>
-                            <a href="{% url 'listado_pelicula' %}">Listado pelicula</a>
+                            <a href="{% url 'pelicula:listado_pelicula' %}">Listado pelicula</a>
                         </li>
+                        {% if user.is_authenticated %}
+                        <li>
+                            
+                            <a> {{user.username}} </a>
+                        </li>
+                        <li>
+                            
+                            <a href ="{% url 'logout'%}"> Salir</a>
+                        </li>
+                        {% else%}
+                        <li>
+                            
+                            <a href ="{% url 'login'%}"> Iniciar sesión</a>
+                        </li>
+                        {% endif %}
                 </ul>   
         </nav>
         

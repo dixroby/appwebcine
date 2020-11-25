@@ -10,3 +10,4 @@ class PeliculaAdmin(admin.ModelAdmin):
 
 admin.site.register(Genero)
 admin.site.register(Pelicula,PeliculaAdmin)
+
