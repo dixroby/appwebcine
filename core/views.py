@@ -1,8 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import *
-from .forms import PeliculaForm
+from .forms import PeliculaForm, CustomUserForm
 from django.contrib.auth.decorators import login_required, permission_required
+from django.views.generic import View
 
+from django.contrib.auth import login, authenticate
 def listado_clase (request) :
     data = {
         "peliculas":Clase.objects.all()
@@ -59,3 +61,25 @@ def eliminar_pelicula(request,id):
 
     return redirect(to = "listado_pelicula")
 
+class RegistroUsuario(View):
+    http_method_names = ['get','post']
+    teplate_name = 'registration/registrar.html'
+
+    def get (self , request) :
+        data = {
+        'form':CustomUserForm
+        }
+        return render(request,self.teplate_name,data)
+
+    def post (self, request ):
+        formulario = CustomUserForm(request.POST)
+        if formulario.is_valid():
+            formulario.save() 
+            #autenticar al usuario  y redirigir a /
+            username = formulario.cleaned_data["username"]
+            password = formulario.cleaned_data["password1"]
+            user = authenticate(username = username,password= password)
+            login(request,user)
+            return redirect("pelicula:home")
+
+        

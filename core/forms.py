@@ -3,6 +3,10 @@ from django import forms
 from django.forms import ModelForm
 from .models import Pelicula
 import datetime
+from django.contrib.auth.models import User
+
+from django.contrib.auth.forms import UserCreationForm
+
 class PeliculaForm(ModelForm):
     nombre = forms.CharField(min_length = 2, max_length = 300)
     duracion = forms.IntegerField(min_value=5,max_value=10000)
@@ -21,3 +25,8 @@ class PeliculaForm(ModelForm):
             raise forms.ValidationError("La fecha no puede ser mayor al dia de hoy") #excepcion
 
         return fecha 
+
+class CustomUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username','first_name','last_name','email','password1','password2']  

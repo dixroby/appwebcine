@@ -17,7 +17,7 @@
 {%endblock %}
 <h2>Listado de peliculas</h2>
 
-<table>
+<table class="table">
     <tr>
         <th>Nombre</th>
         <th>Duración</th>
@@ -34,7 +34,7 @@
         <td>{{c.anio}}</td>
         <td>{{c.genero}}</td>
         <td>
-            <a href="{% url 'modificar-pelicula' c.id %}">Modificar</a> 
+            <a href="{% url 'pelicula:modificar-pelicula' c.id %}">Modificar</a> 
             
             <a onclick="confirmarEliminacion(  '{{c.id }}'  , '{{c.nombre }}' )" href="#">Eliminar</a> </td>
             <a href=""></a>
